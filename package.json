@@ -9,6 +9,7 @@
     "db:push": "npx prisma db push",
     "db:migrate": "npx prisma migrate dev --name init",
     "build": "tsup",
+    "deploy": "tsup && node scripts/deploy-commands.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
