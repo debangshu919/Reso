@@ -33,7 +33,7 @@
 			"options": {
 				"command": "The command you want to get info on"
 			},
-			"content": "Hey there! I'm {bot}, a music bot made with [Lavamusic](https://github.com/appujet/lavamusic) and Discord.js. You can use `{prefix}help <command>` to get more info on a command.",
+			"content": "Hey there! I'm {bot}, a music bot made with Lavalink and Discord.js. You can use `{prefix}help <command>` to get more info on a command.",
 			"title": "Help Menu",
 			"not_found": "This `{cmdName}` command does not exist.",
 			"help_cmd": "**Description:** {description}\n**Usage:** {usage}\n**Examples:** {examples}\n**Aliases:** {aliases}\n**Category:** {category}\n**Cooldown:** {cooldown} seconds\n**Permissions:** {premUser}\n**Bot Permissions:** {premBot}\n**Developer Only:** {dev}\n**Slash Command:** {slash}\n**Args:** {args}\n**Player:** {player}\n**DJ:** {dj}\n**DJ Permissions:** {djPerm}\n**Voice:** {voice}",
@@ -49,7 +49,7 @@
 				"creator": "Creator",
 				"repository": "Repository",
 				"support": "Support",
-				"description": "He really wanted to make his first open source project ever for more coding experience. In this project, he was challenged to make a project with fewer bugs. Hope you enjoy using LavaMusic!"
+				"description": "Reso is a music bot for Discord, written in JavaScript using the Discord.js, Typescript, lavalink-client (Lavalink) library. Hope you enjoy using Reso!"
 			}
 		},
 		"dj": {

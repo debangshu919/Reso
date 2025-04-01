@@ -21,7 +21,7 @@
 			"options": {
 				"command": "O comando sobre o qual queres obter informações"
 			},
-			"content": "Olá! Sou {bot}, um bot de música feito com [Lavamusic](https://github.com/appujet/lavamusic) e Discord. Podes usar `{prefix}help <command>` para obter mais informações sobre um comando.",
+			"content": "Olá! Sou {bot}, um bot de música feito com Lavalink e Discord. Podes usar `{prefix}help <command>` para obter mais informações sobre um comando.",
 			"title": "Menu de Ajuda",
 			"not_found": "Este comando `{cmdName}` não existe.",
 			"help_cmd": "**Descrição:** {description}\n**Utilização:** {usage}\n**Exemplos:** {examples}\n**Alias:** {aliases}\n**Categoria:** {category}\n**Arrefecimento:** {cooldown} segundos\n**Permissões:** {premUser}\n**Permissões do Bot:** {premBot}\n**Apenas para desenvolvedores:** {dev}\n**Comando Slash:** {slash}\n**Args:** {args}\n**Reprodutor:** {player}\n**DJ:** {dj}\n**Permissões de DJ:** {djPerm}\n**Voz:** {voice}",
@@ -32,12 +32,12 @@
 			"content": "Informação do Bot:\n- **Sistema operativo**: {osInfo}\n- **Tempo de atividade**: {osUptime}\n- **Nome de host**: {osHostname}\n- **Arquitetura da CPU**: {cpuInfo}\n- **Uso da CPU**: {cpuUsed}%\n- **Uso de memória**: {memUsed}MB / {memTotal}GB\n- **Versão do Node**: {nodeVersion}\n- **Versão do Discord**: {discordJsVersion}\n- **Conectado a** {guilds} servidores, {channels} canais e {users} utilizadores\n- **Total de comandos**: {commands}"
 		},
 		"about": {
-			"description": "Mostra informação sobre o bot",
+			"description": "Mostra informações sobre o bot",
 			"fields": {
 				"creator": "Criador",
 				"repository": "Repositório",
 				"support": "Suporte",
-				"description": "Ele realmente queria fazer seu primeiro projeto de código aberto para obter mais experiência em programação. Neste projeto, ele foi desafiado a fazer um projeto com menos bugs. Espero que você goste de usar LavaMusic!"
+				"description": "Reso é um bot de música para o Discord, escrito em JavaScript usando as bibliotecas Discord.js, Typescript e lavalink-client (Lavalink). Espero que você goste de usar o Reso!"
 			}
 		},
 		"247": {

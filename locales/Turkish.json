@@ -33,7 +33,7 @@
 			"options": {
 				"command": "Hakkında bilgi almak istediğiniz komut."
 			},
-			"content": "Merhaba! Ben {bot}, [Lavamusic](https://github.com/appujet/lavamusic) ve Discord.js ile yapılmış bir müzik botuyum. {prefix}help <command> yazarak bir komut hakkında daha fazla bilgi alabilirsiniz.",
+			"content": "Merhaba! Ben {bot}, Lavalink ve Discord.js ile yapılmış bir müzik botuyum. {prefix}help <command> yazarak bir komut hakkında daha fazla bilgi alabilirsiniz.",
 			"title": "Yardım Menüsü",
 			"not_found": "Bu {cmdName} komutu mevcut değil.",
 			"help_cmd": "**Açıklama**: {description}\n**Kullanım**: {usage}\n**Örnekler**: {examples}\n**Alternatifler**: {aliases}\n**Kategori**: {category}\n**Bekleme Süresi**: {cooldown} saniye\n**İzinler**: {premUser}\n**Bot İzinleri**: {premBot}\n**Sadece Geliştirici**: {dev}\n**Slash Komut**: {slash}\n**Argümanlar**: {args}\n**Oynatıcı**: {player}\n**DJ**: {dj}\n**DJ İzinleri**: {djPerm}\n**Ses**: {voice}",
@@ -49,7 +49,7 @@
 				"creator": "Oluşturucu",
 				"repository": "Depo",
 				"support": "Destek",
-				"description": "İlk açık kaynak projesini yapmak için gerçekten hevesliydi ve daha fazla kodlama deneyimi kazanmak istedi. Bu projede daha az hatalı bir proje oluşturma zorluğuyla karşılaştı. LavaMusic'i kullanmaktan keyif almanızı umuyorum!"
+				"description": "Reso, Discord.js, Typescript ve lavalink-client (Lavalink) kütüphanelerini kullanarak JavaScript ile yazılmış bir Discord müzik botudur. Reso'yu kullanmaktan keyif almanızı dileriz!"
 			}
 		},
 		"dj": {

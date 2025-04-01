@@ -32,7 +32,7 @@
 			"options": {
 				"command": "command yang ingin Anda dapatkan informasinya"
 			},
-			"content": "Halo! Aku adalah {bot}, bot musik yang dibuat dengan [Lavamusic](https://github.com/appujet/lavamusic) dan Discord. Anda dapat menggunakan `{prefix}help <command>` untuk mendapatkan informasi lebih lanjut tentang command.",
+			"content": "Halo! Aku adalah {bot}, bot musik yang dibuat dengan Lavalink dan Discord. Anda dapat menggunakan `{prefix}help <command>` untuk mendapatkan informasi lebih lanjut tentang command.",
 			"title": "Menu Bantuan",
 			"not_found": "command `{cmdName}` ini tidak ada.",
 			"help_cmd": "**Deskripsi:** {description}\n**Penggunaan:** {usage}\n**Contoh:** {examples}\n**Alias:** {aliases}\n**Kategori:** {category}\n**Cooldown:** {cooldown} detik\n**Izin:** {premUser}\n**Izin Bot:** {premBot}\n**Hanya Pengembang:** {dev}\n**command Slash:** {slash}\n**Argumen:** {args}\n**Player:** {player}\n**DJ:** {dj}\n**Izin DJ:** {djPerm}\n**Suara:** {voice}",
@@ -45,10 +45,10 @@
 		"about": {
 			"description": "Menampilkan informasi tentang bot",
 			"fields": {
-				"creator": "Kreator",
+				"creator": "Pembuat",
 				"repository": "Repositori",
-				"support": "Support",
-				"description": "Dia sangat ingin membuat proyek open source pertamanya untuk pengalaman coding yang lebih banyak. Dalam proyek ini, dia ditantang untuk membuat proyek dengan lebih sedikit bug. Semoga Anda menikmati menggunakan LavaMusic!"
+				"support": "Dukungan",
+				"description": "Reso adalah bot musik untuk Discord, ditulis dalam JavaScript menggunakan pustaka Discord.js, Typescript, dan lavalink-client (Lavalink). Semoga Anda menikmati menggunakan Reso!"
 			}
 		},
 		"dj": {

@@ -32,7 +32,7 @@
 			"options": {
 				"command": "Woh command jiske baare mein aap jankari prapt karna chahte hain"
 			},
-			"content": "Namaste! Main {bot} hun, [Lavamusic](https://github.com/appujet/lavamusic) aur Discord se bana ek music bot. Kisi command ke baare mein adhik jankari prapt karne ke liye aap `{prefix}help <command>` ka upyog kar sakte hain.",
+			"content": "Namaste! Main {bot} hun, Lavalink aur Discord se bana ek music bot. Kisi command ke baare mein adhik jankari prapt karne ke liye aap `{prefix}help <command>` ka upyog kar sakte hain.",
 			"title": "Sahayta Menu",
 			"not_found": "Yeh `{cmdName}` command maujood nahin hai.",
 			"help_cmd": "**Vivaran:** {description}\n**Prayog:** {usage}\n**Udaharan:** {examples}\n**Upnaam:** {aliases}\n**Shreni:** {category}\n**Cooldown:** {cooldown} seconds\n**Anumatiyan:** {premUser}\n**Bot Anumatiyan:** {premBot}\n**Keval Developer:** {dev}\n**Slash Command:** {slash}\n**Args:** {args}\n**Player:** {player}\n**DJ:** {dj}\n**DJ Anumatiyan:** {djPerm}\n**Voice:** {voice}",
@@ -48,7 +48,7 @@
 				"creator": "Nirmata",
 				"repository": "Repository",
 				"support": "Sahayta",
-				"description": "Woh sachmuch mein coding anubhav ke liye apna pehla open source project banana chahta tha. Is project mein, use kam bugs ke sath ek project banane ki चुनौती दी गई थी. Aasha hai aap LavaMusic ka upyog karke anand lenge!"
+				"description": "Reso Discord ke liye ek sangeet bot hai, jo JavaScript mein Discord.js, Typescript aur lavalink-client (Lavalink) libraries ka upyog karke likha gaya hai. Aasha hai aap Reso ka upyog karke anand lenge!"
 			}
 		},
 		"dj": {

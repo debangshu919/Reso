@@ -41,38 +41,38 @@ export default class About extends Command {
 		const supportButton = new ButtonBuilder()
 			.setLabel(ctx.locale('buttons.support'))
 			.setStyle(ButtonStyle.Link)
-			.setURL('https://discord.gg/YQsGbTwPBx');
+			.setURL('https://discord.com');
 		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(inviteButton, supportButton);
 		const embed = this.client
 			.embed()
 			.setAuthor({
-				name: 'Lavamusic',
-				iconURL: 'https://media.discordapp.net/attachments/876035356460462090/888434725235097610/20210820_124325.png',
+				name: 'Reso',
+				iconURL: 'https://media.discordapp.net/attachments/1356507997597208636/1356508050693029968/Untitled_logo_1_free-file_2.jpg?ex=67ecd211&is=67eb8091&hm=6ba3dd773cb76b3c91d635f56cccd3affce5521e45b84cabf86eec21011b35f6&=&format=webp',
 			})
 			.setThumbnail(
-				'https://media.discordapp.net/attachments/876035356460462090/888434725235097610/20210820_124325.png',
+				'https://media.discordapp.net/attachments/1356507997597208636/1356508050693029968/Untitled_logo_1_free-file_2.jpg?ex=67ecd211&is=67eb8091&hm=6ba3dd773cb76b3c91d635f56cccd3affce5521e45b84cabf86eec21011b35f6&=&format=webp',
 			)
 			.setColor(this.client.color.main)
 			.addFields(
 				{
 					name: ctx.locale('cmd.about.fields.creator'),
-					value: '[appujet](https://github.com/appujet)',
+					value: '[debangshu919](https://github.com/debangshu919)',
 					inline: true,
 				},
 				{
 					name: ctx.locale('cmd.about.fields.repository'),
-					value: '[Here](https://github.com/appujet/lavamusic)',
+					value: '[Here](https://github.com/debangshu919/Reso)',
 					inline: true,
 				},
-				{
-					name: ctx.locale('cmd.about.fields.support'),
-					value: '[Here](https://discord.gg/YQsGbTwPBx)',
-					inline: true,
-				},
+				// {
+				// 	name: ctx.locale('cmd.about.fields.support'),
+				// 	value: '[Here](https://discord.gg/YQsGbTwPBx)',
+				// 	inline: true,
+				// },
 				{
 					name: '\u200b',
 					value: ctx.locale('cmd.about.fields.description'),
-					inline: true,
+					inline: false,
 				},
 			);
 		await ctx.sendMessage({

@@ -43,12 +43,12 @@
 			"content": "机器人信息：\n- **操作系统**: {osInfo}\n- **正常运行时间**: {osUptime}\n- **主机名**: {osHostname}\n- **CPU 架构**: {cpuInfo}\n- **CPU 使用率**: {cpuUsed}%\n- **内存使用量**: {memUsed}MB / {memTotal}GB\n- **节点版本**: {nodeVersion}\n- **Discord 版本**: {discordJsVersion}\n- **已连接到** {guilds} 个服务器，{channels} 个频道和 {users} 个用户\n- **命令总数**: {commands}"
 		},
 		"about": {
-			"description": "显示关于机器人的信息",
+			"description": "显示机器人信息",
 			"fields": {
 				"creator": "创建者",
-				"repository": "存储库",
+				"repository": "代码仓库",
 				"support": "支持",
-				"description": "他真的很想为了获得更多编码经验而制作他的第一个开源项目。在这个项目中，他面临着制作一个错误更少的项目的挑战。希望您喜欢使用 LavaMusic！"
+				"description": "Reso 是一个 Discord 音乐机器人，使用 JavaScript 并结合 Discord.js、Typescript 和 lavalink-client (Lavalink) 库编写。希望您喜欢使用 Reso！"
 			}
 		},
 		"dj": {

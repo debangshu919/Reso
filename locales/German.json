@@ -32,7 +32,7 @@
 			"options": {
 				"command": "Der Befehl, zu dem du Informationen erhalten möchtest"
 			},
-			"content": "Hallo! Ich bin {bot}, ein Musikbot, der mit [Lavamusic](https://github.com/appujet/lavamusic) und Discord erstellt wurde. Du kannst `{prefix}help <command>` verwenden, um mehr Informationen zu einem Befehl zu erhalten.",
+			"content": "Hallo! Ich bin {bot}, ein Musikbot, der mit Lavalink und Discord erstellt wurde. Du kannst `{prefix}help <command>` verwenden, um mehr Informationen zu einem Befehl zu erhalten.",
 			"title": "Hilfe-Menü",
 			"not_found": "Dieser Befehl `{cmdName}` existiert nicht.",
 			"help_cmd": "**Beschreibung:** {description}\n**Verwendung:** {usage}\n**Beispiele:** {examples}\n**Alias:** {aliases}\n**Kategorie:** {category}\n**Abklingzeit:** {cooldown} Sekunden\n**Berechtigungen:** {premUser}\n**Bot-Berechtigungen:** {premBot}\n**Nur für Entwickler:** {dev}\n**Slash-Befehl:** {slash}\n**Args:** {args}\n**Spieler:** {player}\n**DJ:** {dj}\n**DJ-Berechtigungen:** {djPerm}\n**Stimme:** {voice}",
@@ -48,7 +48,7 @@
 				"creator": "Ersteller",
 				"repository": "Repository",
 				"support": "Support",
-				"description": "Er wollte unbedingt sein erstes Open-Source-Projekt überhaupt für mehr Programmiererfahrung erstellen. In diesem Projekt wurde er herausgefordert, ein Projekt mit weniger Bugs zu erstellen. Ich hoffe, du hast Spaß beim Verwenden von LavaMusic!"
+				"description": "Reso ist ein Musikbot für Discord, geschrieben in JavaScript mit Discord.js, Typescript und lavalink-client (Lavalink) Bibliotheken. Viel Spaß mit Reso!"
 			}
 		},
 		"dj": {
