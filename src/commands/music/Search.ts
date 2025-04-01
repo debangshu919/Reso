@@ -55,9 +55,10 @@ export default class Search extends Command {
 				vcRegion: memberVoiceChannel.rtcRegion!,
 			});
 		if (!player.connected) await player.connect();
+		await ctx.sendDeferMessage({content: `Searching for ${query}...`});
 		const response = (await player.search({ query: query }, ctx.author)) as SearchResult;
 		if (!response || response.tracks?.length === 0) {
-			return await ctx.sendMessage({
+			return await ctx.editMessage({
 				embeds: [embed.setDescription(ctx.locale('cmd.search.errors.no_results')).setColor(this.client.color.red)],
 			});
 		}
@@ -78,7 +79,7 @@ export default class Search extends Command {
 				(track: Track, index: number) =>
 					`${index + 1}. [${track.info.title}](${track.info.uri}) - \`${track.info.author}\``,
 			);
-			await ctx.sendMessage({
+			await ctx.editMessage({
 				embeds: [embed.setDescription(embeds.join('\n'))],
 				components: [row],
 			});

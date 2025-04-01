@@ -34,6 +34,7 @@ export default class Botinfo extends Command {
 	}
 
 	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+		await ctx.sendDeferMessage({content: 'Loading botinfo...'})
 		const osInfo = `${os.type()} ${os.release()}`;
 		const osUptime = client.utils.formatTime(os.uptime());
 		const osHostname = os.hostname();
@@ -73,7 +74,7 @@ export default class Botinfo extends Command {
 
 			const embed = this.client.embed().setColor(this.client.color.main).setDescription(botInfo);
 
-			return await ctx.sendMessage({
+			return await ctx.editMessage({
 				embeds: [embed],
 			});
 		});
