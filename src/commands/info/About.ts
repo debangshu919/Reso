@@ -41,40 +41,47 @@ export default class About extends Command {
 		const supportButton = new ButtonBuilder()
 			.setLabel(ctx.locale('buttons.support'))
 			.setStyle(ButtonStyle.Link)
-			.setURL('https://discord.com');
-		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(inviteButton, supportButton);
+			.setURL('https://discord.gg/YUFvu5hgFP');
+		const premiumButton = new ButtonBuilder()
+			.setLabel(ctx.locale('buttons.premium'))
+			.setStyle(ButtonStyle.Link)
+			.setURL('https://resobot.live/premium');
+		const websiteButton = new ButtonBuilder()
+			.setLabel(ctx.locale('buttons.website'))
+			.setStyle(ButtonStyle.Link)
+			.setURL('https://resobot.live');
+		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(inviteButton, supportButton, premiumButton, websiteButton);
 		const embed = this.client
 			.embed()
 			.setAuthor({
 				name: 'Reso',
 				iconURL: 'https://media.discordapp.net/attachments/1356507997597208636/1356508050693029968/Untitled_logo_1_free-file_2.jpg?ex=67ecd211&is=67eb8091&hm=6ba3dd773cb76b3c91d635f56cccd3affce5521e45b84cabf86eec21011b35f6&=&format=webp',
 			})
-			.setThumbnail(
-				'https://media.discordapp.net/attachments/1356507997597208636/1356508050693029968/Untitled_logo_1_free-file_2.jpg?ex=67ecd211&is=67eb8091&hm=6ba3dd773cb76b3c91d635f56cccd3affce5521e45b84cabf86eec21011b35f6&=&format=webp',
-			)
+			.setThumbnail('https://media.discordapp.net/attachments/1356507997597208636/1356508050693029968/Untitled_logo_1_free-file_2.jpg?ex=67ef7511&is=67ee2391&hm=645aac285e2f54ffb715c9bba3a6ca361e31ce083a91ec35fd75660c9994d0df&=&format=webp')
 			.setColor(this.client.color.main)
 			.addFields(
-				{
-					name: ctx.locale('cmd.about.fields.creator'),
-					value: '[debangshu919](https://github.com/debangshu919)',
-					inline: true,
-				},
-				{
-					name: ctx.locale('cmd.about.fields.repository'),
-					value: '[Here](https://github.com/debangshu919/Reso)',
-					inline: true,
-				},
-				// {
-				// 	name: ctx.locale('cmd.about.fields.support'),
-				// 	value: '[Here](https://discord.gg/YQsGbTwPBx)',
-				// 	inline: true,
-				// },
 				{
 					name: '\u200b',
 					value: ctx.locale('cmd.about.fields.description'),
 					inline: false,
 				},
-			);
+				{
+					name: '\u200b',
+					value: '\u200b',
+					inline: false,
+				},
+				{
+					name: ctx.locale('cmd.about.fields.creator'),
+					value: '[chromavisionmusic](https://discord.com/users/1063860912173359114)',
+					inline: true,
+				},
+				{
+					name: ctx.locale('cmd.about.fields.support'),
+					value: '[Here](https://discord.gg/YUFvu5hgFP)',
+					inline: true,
+				},
+			)
+			.setFooter({ text: 'Made with ❤️ using discord.js and lavalink-client',iconURL: 'https://media.discordapp.net/attachments/1356507997597208636/1357424718881226895/typescript.png?ex=67f027c8&is=67eed648&hm=b343f3311094a843c1f033ee33d9ce18cdf7bb139ca547a4b12418bfc78784de&=&format=webp&quality=lossless' });
 		await ctx.sendMessage({
 			content: '',
 			embeds: [embed],
