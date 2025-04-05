@@ -46,10 +46,10 @@
 		"about": {
 			"description": "Shows information about the bot",
 			"fields": {
-				"creator": "Creator",
+				"creator": "Developer",
 				"repository": "Repository",
 				"support": "Support",
-				"description": "Reso is a music bot for Discord, written in JavaScript using the Discord.js, Typescript, lavalink-client (Lavalink) library. Hope you enjoy using Reso!"
+				"description": "Hey there! I'm Reso, a feature-rich music bot for Discord. I'm designed to provide a seamless and enjoyable music experience for your server. With a wide range of commands and customization options, I'm here to make your music moments unforgettable. Let's groove together!"
 			}
 		},
 		"dj": {
@@ -280,7 +280,7 @@
 		"nowplaying": {
 			"description": "Shows the currently playing song",
 			"now_playing": "Now Playing",
-			"track_info": "[{title}]({uri}) - Requested By: <@{requester}>\n\n`{bar}`"
+			"track_info": "[{title}]({uri})"
 		},
 		"pause": {
 			"description": "Pauses the current song",
@@ -516,6 +516,9 @@
 	"buttons": {
 		"invite": "Invite",
 		"support": "Support Server",
+		"website": "Website",
+		"premium": "Premium",
+		"dashboard": "Dashboard",
 		"previous": "Previous",
 		"resume": "Resume",
 		"stop": "Stop",

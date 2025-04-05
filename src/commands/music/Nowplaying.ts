@@ -1,4 +1,5 @@
 import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Requester } from '../../types';
 
 export default class Nowplaying extends Command {
 	constructor(client: Lavamusic) {
@@ -50,14 +51,36 @@ export default class Nowplaying extends Command {
 				ctx.locale('cmd.nowplaying.track_info', {
 					title: track.info.title,
 					uri: track.info.uri,
-					requester: (track.requester as any).id,
-					bar: bar,
+					// requester: (track.requester as any).id,
+					// bar: bar,
 				}),
 			)
-			.addFields({
-				name: '\u200b',
-				value: `\`${client.utils.formatTime(position)} / ${client.utils.formatTime(duration)}\``,
-			});
+			// .addFields({
+			// 	name: '\u200b',
+			// 	value: `\`${client.utils.formatTime(position)} / ${client.utils.formatTime(duration)}\``,
+			// })
+			.addFields(
+				{
+				name: `Artist`,
+				value: `> \`${track.info.author}\``,
+				inline: true,
+				},
+				{
+				name: `Duration`,
+				value: `> \`${client.utils.formatTime(duration)}\``,
+				inline: true,
+				},
+				{
+					name: `Position`,
+					value: `> \`${((position / duration) * 100).toFixed(2)}%\``,
+					inline: true,
+				}
+			)
+			.setFooter({
+				text: `Requested by ${(track.requester as Requester).username}`,
+				iconURL: (track.requester as Requester).avatarURL,
+			})
+			.setTimestamp();
 
 		return await ctx.sendMessage({ embeds: [embed] });
 	}

@@ -17,14 +17,14 @@ function setConsoleTitle(title: string): void {
 }
 
 try {
-	if (!fs.existsSync('./src/utils/LavaLogo.txt')) {
-		logger.error('LavaLogo.txt file is missing');
+	if (!fs.existsSync('./src/utils/ResoLogo.txt')) {
+		logger.error('ResoLogo.txt file is missing');
 		process.exit(1);
 	}
 	console.clear();
 	// Set a custom title for the console window
-	setConsoleTitle('Lavamusic');
-	const logFile = fs.readFileSync('./src/utils/LavaLogo.txt', 'utf-8');
+	setConsoleTitle('Reso');
+	const logFile = fs.readFileSync('./src/utils/ResoLogo.txt', 'utf-8');
 	console.log(theme.purpleNeon(logFile));
 	shardStart(logger);
 } catch (err) {

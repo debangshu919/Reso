@@ -34,7 +34,7 @@ export default class _8d extends Command {
 		const player = client.manager.getPlayer(ctx.guild!.id);
 		if (!player) return await ctx.sendMessage(ctx.locale('event.message.no_music_playing'));
 		const filterEnabled = player.filterManager.filters.rotation;
-
+		
 		if (filterEnabled) {
 			await player.filterManager.toggleRotation();
 			await ctx.sendMessage({
