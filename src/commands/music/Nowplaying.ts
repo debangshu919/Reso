@@ -61,18 +61,18 @@ export default class Nowplaying extends Command {
 			// })
 			.addFields(
 				{
-				name: `Artist`,
-				value: `> \`${track.info.author}\``,
-				inline: true,
+					name: `Artist`,
+					value: `${track.info.author}`,
+					inline: true,
 				},
 				{
-				name: `Duration`,
-				value: `> \`${client.utils.formatTime(duration)}\``,
-				inline: true,
+					name: `Duration`,
+					value: `${client.utils.formatTime(duration)}`,
+					inline: true,
 				},
 				{
 					name: `Position`,
-					value: `> \`${((position / duration) * 100).toFixed(2)}%\``,
+					value: `${((position / duration) * 100).toFixed(2)}%`,
 					inline: true,
 				}
 			)

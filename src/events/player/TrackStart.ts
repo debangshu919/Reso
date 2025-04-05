@@ -27,6 +27,7 @@ export default class TrackStart extends Event {
 	}
 
 	public async run(player: Player, track: Track | null, _payload: TrackStartEvent): Promise<void> {
+		
 		const guild = this.client.guilds.cache.get(player.guildId);
 		if (!guild) return;
 		if (!player.textChannelId) return;
