@@ -77,7 +77,7 @@ export class ThemeSelector {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

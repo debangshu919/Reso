@@ -1,8 +1,8 @@
 import type { AutocompleteInteraction } from 'discord.js';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class DeletePlaylist extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'delete',
 			description: {
@@ -39,7 +39,7 @@ export default class DeletePlaylist extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const playlistName = args.join(' ').trim();
 		const embed = this.client.embed();
 
@@ -87,7 +87,7 @@ export default class DeletePlaylist extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

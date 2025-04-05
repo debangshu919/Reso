@@ -1,10 +1,10 @@
 import os from 'node:os';
 import { version } from 'discord.js';
 import { showTotalMemory, usagePercent } from 'node-system-stats';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Botinfo extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'botinfo',
 			description: {
@@ -33,7 +33,7 @@ export default class Botinfo extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		await ctx.sendDeferMessage({content: 'Loading botinfo...'})
 		const osInfo = `${os.type()} ${os.release()}`;
 		const osUptime = client.utils.formatTime(os.uptime());
@@ -82,7 +82,7 @@ export default class Botinfo extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

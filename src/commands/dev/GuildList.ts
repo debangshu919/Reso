@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class GuildList extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'guildlist',
 			description: {
@@ -29,7 +29,7 @@ export default class GuildList extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		const guilds = await client.shard?.broadcastEval(c =>
 			c.guilds.cache.map(guild => ({ name: guild.name, id: guild.id })),
 		);
@@ -49,7 +49,7 @@ export default class GuildList extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

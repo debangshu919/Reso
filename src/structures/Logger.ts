@@ -5,7 +5,7 @@ const options: SignaleOptions = {
 	disabled: false,
 	interactive: false,
 	logLevel: 'info',
-	scope: 'Lavamusic',
+	scope: 'Reso',
 	types: {
 		info: {
 			badge: 'ℹ',
@@ -57,7 +57,7 @@ export default class Logger extends Signale {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

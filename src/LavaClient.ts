@@ -1,6 +1,6 @@
 import { type ClientOptions, GatewayIntentBits } from 'discord.js';
 import { env } from './env';
-import Lavamusic from './structures/Lavamusic';
+import Reso from './structures/Reso';
 
 const { GuildMembers, MessageContent, GuildVoiceStates, GuildMessages, Guilds, GuildMessageTyping } = GatewayIntentBits;
 
@@ -9,11 +9,11 @@ const clientOptions: ClientOptions = {
 	allowedMentions: { parse: ['users', 'roles'], repliedUser: false },
 };
 
-const client = new Lavamusic(clientOptions);
+const client = new Reso(clientOptions);
 client.start(env.TOKEN);
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

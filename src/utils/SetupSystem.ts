@@ -1,7 +1,7 @@
 import { type ColorResolvable, EmbedBuilder, type Guild, type Message, type TextChannel, MessageFlags } from 'discord.js';
 import type { Player, Track } from 'lavalink-client';
 import { T } from '../structures/I18n';
-import type { Lavamusic } from '../structures/index';
+import type { Reso } from '../structures/index';
 import type { Requester } from '../types';
 import { getButtons } from './Buttons';
 
@@ -13,7 +13,7 @@ import { getButtons } from './Buttons';
  * @param locale The locale to translate the strings.
  * @returns The modified embed.
  */
-function neb(embed: EmbedBuilder, player: Player, client: Lavamusic, locale: string): EmbedBuilder {
+function neb(embed: EmbedBuilder, player: Player, client: Reso, locale: string): EmbedBuilder {
 	if (!player?.queue.current?.info) return embed;
 	const iconUrl =
 		client.config.icons[player.queue.current.info.sourceName] || client.user!.displayAvatarURL({ extension: 'png' });
@@ -45,7 +45,7 @@ function neb(embed: EmbedBuilder, player: Player, client: Lavamusic, locale: str
  * @param message The message to edit or send the setup message.
  * @returns A promise that resolves when the function is done.
  */
-async function setupStart(client: Lavamusic, query: string, player: Player, message: Message): Promise<void> {
+async function setupStart(client: Reso, query: string, player: Player, message: Message): Promise<void> {
 	let m: Message | undefined;
 	const embed = client.embed();
 	const n = client.embed().setColor(client.color.main);
@@ -140,7 +140,7 @@ async function trackStart(
 	channel: TextChannel,
 	player: Player,
 	track: Track,
-	client: Lavamusic,
+	client: Reso,
 	locale: string,
 ): Promise<void> {
 	const icon = player.queue.current ? player.queue.current.info.artworkUrl : client.config.links.img;
@@ -202,7 +202,7 @@ async function trackStart(
 	}
 }
 
-async function updateSetup(client: Lavamusic, guild: Guild, locale: string): Promise<void> {
+async function updateSetup(client: Reso, guild: Guild, locale: string): Promise<void> {
 	const setup = await client.db.getSetup(guild.id);
 	let m: Message | undefined;
 	if (setup?.textId) {
@@ -317,7 +317,7 @@ async function oops(channel: TextChannel, args: string): Promise<void> {
 export { setupStart, trackStart, buttonReply, updateSetup, oops };
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

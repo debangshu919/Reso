@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index.js';
+import { Command, type Context, type Reso } from '../../structures/index.js';
 
 export default class Vibrato extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'vibrato',
 			description: {
@@ -30,7 +30,7 @@ export default class Vibrato extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		const player = client.manager.getPlayer(ctx.guild!.id);
 		if (!player) return await ctx.sendMessage(ctx.locale('event.message.no_music_playing'));
 		const vibratoEnabled = player.filterManager.filters.vibrato;
@@ -60,7 +60,7 @@ export default class Vibrato extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appujet/lavamusic.git"
+    "url": "git+https://github.com/debangshu919/Reso.git"
   },
   "keywords": [
     "discord",
@@ -24,16 +24,16 @@
     "bot",
     "lavalink",
     "lavalink-client",
-    "lavamusic",
+    "reso",
     "typescript",
     "prisma"
   ],
-  "author": "appujet",
+  "author": "debangshu919",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/appujet/lavamusic/issues"
+    "url": "https://github.com/debangshu919/Reso/issues"
   },
-  "homepage": "https://github.com/appujet/lavamusic#readme",
+  "homepage": "https://github.com/debangshu919/Reso#readme",
   "devDependencies": {
     "@appujet/eslint-config": "^0.0.3",
     "@types/i18n": "^0.13.12",

@@ -1,13 +1,13 @@
 import http from 'node:http';
 import { env } from '../../env';
-import type { Lavamusic } from '../../structures/index';
+import type { Reso } from '../../structures/index';
 import type { BotPlugin } from '../index';
 
 const keepAlive: BotPlugin = {
 	name: 'KeepAlive Plugin',
 	version: '1.0.0',
 	author: 'Appu',
-	initialize: (client: Lavamusic) => {
+	initialize: (client: Reso) => {
 		if (env.KEEP_ALIVE) {
 			const server = http.createServer((_req, res) => {
 				res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -23,7 +23,7 @@ const keepAlive: BotPlugin = {
 export default keepAlive;
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

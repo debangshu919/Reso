@@ -1,8 +1,8 @@
 import type { TextChannel } from 'discord.js';
-import type { Lavamusic } from '../structures/index';
+import type { Reso } from '../structures/index';
 
 export function sendLog(
-	client: Lavamusic,
+	client: Reso,
 	message: string,
 	type: 'error' | 'warn' | 'info' | 'success' = 'info',
 ): void {
@@ -27,7 +27,7 @@ export function sendLog(
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

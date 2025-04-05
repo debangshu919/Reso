@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Help extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'help',
 			description: {
@@ -37,7 +37,7 @@ export default class Help extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const embed = this.client.embed();
 		const guild = await client.db.get(ctx.guild!.id);
 		const commands = this.client.commands.filter(cmd => cmd.category !== 'dev');
@@ -112,7 +112,7 @@ export default class Help extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

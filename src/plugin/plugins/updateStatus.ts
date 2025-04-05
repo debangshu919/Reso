@@ -1,11 +1,11 @@
-import type { Lavamusic } from '../../structures/index';
+import type { Reso } from '../../structures/index';
 import type { BotPlugin } from '../index';
 
 const updateStatusPlugin: BotPlugin = {
 	name: 'Update Status Plugin',
 	version: '1.0.0',
 	author: 'Appu',
-	initialize: (client: Lavamusic) => {
+	initialize: (client: Reso) => {
 		client.on('ready', () => client.utils.updateStatus(client));
 	},
 };
@@ -13,7 +13,7 @@ const updateStatusPlugin: BotPlugin = {
 export default updateStatusPlugin;
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

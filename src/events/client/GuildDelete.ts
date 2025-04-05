@@ -1,8 +1,8 @@
 import { EmbedBuilder, type Guild, type GuildMember, type TextChannel } from 'discord.js';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class GuildDelete extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'guildDelete',
 		});
@@ -72,7 +72,7 @@ export default class GuildDelete extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

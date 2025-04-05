@@ -1,9 +1,9 @@
 import { ActionRowBuilder, StringSelectMenuBuilder, type TextChannel, type VoiceChannel } from 'discord.js';
 import type { SearchResult, Track } from 'lavalink-client';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Search extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'search',
 			description: {
@@ -39,7 +39,7 @@ export default class Search extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const embed = this.client.embed().setColor(this.client.color.main);
 		let player = client.manager.getPlayer(ctx.guild!.id);
 		const query = args.join(' ');
@@ -116,7 +116,7 @@ export default class Search extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

@@ -15,12 +15,12 @@ import {
 } from 'discord.js';
 import type { Player, Track, TrackStartEvent } from 'lavalink-client';
 import { T } from '../../structures/I18n';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 import type { Requester } from '../../types';
 import { trackStart } from '../../utils/SetupSystem';
 
 export default class TrackStart extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'trackStart',
 		});
@@ -87,7 +87,7 @@ export default class TrackStart extends Event {
 	}
 }
 
-function createButtonRow(player: Player, client: Lavamusic): ActionRowBuilder<ButtonBuilder> {
+function createButtonRow(player: Player, client: Reso): ActionRowBuilder<ButtonBuilder> {
 	const previousButton = new ButtonBuilder()
 
 		.setCustomId('previous')
@@ -126,7 +126,7 @@ function createCollector(
 	player: Player,
 	_track: Track,
 	embed: any,
-	client: Lavamusic,
+	client: Reso,
 	locale: string,
 ): void {
 	const collector = message.createMessageComponentCollector({
@@ -265,7 +265,7 @@ function createCollector(
 }
 
 export async function checkDj(
-	client: Lavamusic,
+	client: Reso,
 	interaction:
 		| ButtonInteraction<'cached'>
 		| StringSelectMenuInteraction<'cached'>
@@ -287,7 +287,7 @@ export async function checkDj(
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

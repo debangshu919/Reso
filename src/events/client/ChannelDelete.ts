@@ -1,7 +1,7 @@
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class ChannelDelete extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'channelDelete',
 		});
@@ -37,7 +37,7 @@ export default class ChannelDelete extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

@@ -1,9 +1,9 @@
 import type { ApplicationCommandOptionChoiceData, AutocompleteInteraction, VoiceChannel } from 'discord.js';
 import type { SearchResult } from 'lavalink-client';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Play extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'play',
 			description: {
@@ -45,7 +45,7 @@ export default class Play extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const query = args.join(' ');
 		await ctx.sendDeferMessage(ctx.locale('cmd.play.loading'));
 		let player = client.manager.getPlayer(ctx.guild!.id);
@@ -123,7 +123,7 @@ export default class Play extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

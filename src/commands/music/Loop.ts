@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Loop extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'loop',
 			description: {
@@ -30,7 +30,7 @@ export default class Loop extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		const embed = this.client.embed().setColor(this.client.color.main);
 		const player = client.manager.getPlayer(ctx.guild!.id);
 		let loopMessage = '';
@@ -60,7 +60,7 @@ export default class Loop extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

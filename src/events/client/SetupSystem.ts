@@ -1,10 +1,10 @@
 import { type Message, TextChannel } from 'discord.js';
 import { T } from '../../structures/I18n';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 import { oops, setupStart } from '../../utils/SetupSystem';
 
 export default class SetupSystem extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'setupSystem',
 		});
@@ -71,7 +71,7 @@ export default class SetupSystem extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

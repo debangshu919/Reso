@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type { Lavamusic } from '../structures/index';
+import type { Reso } from '../structures/index';
 
 const pluginsFolder = path.join(process.cwd(), 'dist', 'plugin', 'plugins');
 
-export default async function loadPlugins(client: Lavamusic): Promise<void> {
+export default async function loadPlugins(client: Reso): Promise<void> {
 	try {
 		const pluginFiles = fs.readdirSync(pluginsFolder).filter(file => file.endsWith('.js'));
 		for (const file of pluginFiles) {
@@ -23,12 +23,12 @@ export interface BotPlugin {
 	version: string;
 	author: string;
 	description?: string;
-	initialize: (client: Lavamusic) => void;
-	shutdown?: (client: Lavamusic) => void;
+	initialize: (client: Reso) => void;
+	shutdown?: (client: Reso) => void;
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

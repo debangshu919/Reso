@@ -22,7 +22,7 @@ export async function shardStart(logger: Logger) {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

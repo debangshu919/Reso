@@ -1,8 +1,8 @@
 import { ChannelType, type TextChannel } from 'discord.js';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class GuildLeave extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'guildleave',
 			description: {
@@ -30,7 +30,7 @@ export default class GuildLeave extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const guildId = args[0];
 
 		const guild = await client.shard
@@ -73,7 +73,7 @@ export default class GuildLeave extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

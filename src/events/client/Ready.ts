@@ -1,9 +1,9 @@
 import { AutoPoster } from 'topgg-autoposter';
 import { env } from '../../env';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class Ready extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'ready',
 		});
@@ -37,7 +37,7 @@ export default class Ready extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

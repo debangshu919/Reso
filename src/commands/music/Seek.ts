@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Seek extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'seek',
 			description: {
@@ -37,7 +37,7 @@ export default class Seek extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const player = client.manager.getPlayer(ctx.guild!.id);
 		const current = player?.queue.current?.info;
 		const embed = this.client.embed();
@@ -77,7 +77,7 @@ export default class Seek extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

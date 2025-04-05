@@ -1,7 +1,7 @@
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Ping extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'ping',
 			description: {
@@ -30,7 +30,7 @@ export default class Ping extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		const msg = await ctx.sendDeferMessage(ctx.locale('cmd.ping.content'));
 
 		const botLatency = msg.createdTimestamp - ctx.createdTimestamp;
@@ -71,7 +71,7 @@ export default class Ping extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

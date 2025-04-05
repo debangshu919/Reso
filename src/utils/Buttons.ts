@@ -1,8 +1,8 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, type EmojiIdentifierResolvable } from 'discord.js';
 import type { Player } from 'lavalink-client';
-import type { Lavamusic } from '../structures/index';
+import type { Reso } from '../structures/index';
 
-function getButtons(player: Player, client: Lavamusic): ActionRowBuilder<ButtonBuilder>[] {
+function getButtons(player: Player, client: Reso): ActionRowBuilder<ButtonBuilder>[] {
 	const buttonData = [
 		{
 			customId: 'PREV_BUT',
@@ -76,7 +76,7 @@ function getButtons(player: Player, client: Lavamusic): ActionRowBuilder<ButtonB
 export { getButtons };
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

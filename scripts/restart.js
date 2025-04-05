@@ -1,21 +1,21 @@
 const { exec } = require('node:child_process');
 
-async function startLavamusic() {
+async function startReso() {
 	exec('npm start', (error, stdout, stderr) => {
 		if (error) {
-			console.error(`Error starting Lavamusic: ${error}`);
+			console.error(`Error starting Reso: ${error}`);
 			return;
 		}
 		if (stderr) {
-			console.error(`Error starting Lavamusic: ${stderr}`);
+			console.error(`Error starting Reso: ${stderr}`);
 		}
 	});
 }
 
-setTimeout(startLavamusic, 5000);
+setTimeout(startReso, 5000);
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

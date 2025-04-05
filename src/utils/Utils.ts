@@ -8,7 +8,7 @@ import {
 	MessageFlags,
 	type TextChannel,
 } from 'discord.js';
-import type { Context, Lavamusic } from '../structures/index';
+import type { Context, Reso } from '../structures/index';
 
 // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export class Utils {
@@ -22,7 +22,7 @@ export class Utils {
 		return `${Math.floor(ms / dayMs)}d ${Math.floor((ms % dayMs) / hourMs)}h`;
 	}
 
-	public static updateStatus(client: Lavamusic, guildId?: string): void {
+	public static updateStatus(client: Reso, guildId?: string): void {
 		const { user } = client;
 		if (user && client.env.GUILD_ID && guildId === client.env.GUILD_ID) {
 			const player = client.manager.getPlayer(client.env.GUILD_ID);
@@ -82,7 +82,7 @@ export class Utils {
 		return `${filledBar}${emptyBar} ${percent}%`;
 	}
 
-	public static async paginate(client: Lavamusic, ctx: Context, embed: any[]): Promise<void> {
+	public static async paginate(client: Reso, ctx: Context, embed: any[]): Promise<void> {
 		if (embed.length < 2) {
 			if (ctx.isInteraction) {
 				ctx.deferred ? ctx.interaction?.followUp({ embeds: embed }) : ctx.interaction?.reply({ embeds: embed });
@@ -185,12 +185,7 @@ export class Utils {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
- * Company: Coders
- * Copyright (c) 2024. All rights reserved.
- * This code is the property of Coder and may not be reproduced or
- * modified without permission. For more information, contact us at
- * https://discord.gg/YQsGbTwPBx
  */

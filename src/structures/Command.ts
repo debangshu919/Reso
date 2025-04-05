@@ -1,5 +1,5 @@
 import type { APIApplicationCommandOption, PermissionResolvable } from 'discord.js';
-import type Lavamusic from './Lavamusic';
+import type Reso from './Reso';
 
 interface CommandDescription {
 	content: string;
@@ -37,7 +37,7 @@ interface CommandOptions {
 }
 
 export default class Command {
-	public client: Lavamusic;
+	public client: Reso;
 	public name: string;
 	public name_localizations?: Record<string, string>;
 	public description: CommandDescription;
@@ -52,7 +52,7 @@ export default class Command {
 	public options: APIApplicationCommandOption[];
 	public category: string;
 
-	constructor(client: Lavamusic, options: CommandOptions) {
+	constructor(client: Reso, options: CommandOptions) {
 		this.client = client;
 		this.name = options.name;
 		this.name_localizations = options.name_localizations ?? {};
@@ -82,13 +82,13 @@ export default class Command {
 		this.category = options.category ?? 'general';
 	}
 
-	public async run(_client: Lavamusic, _message: any, _args: string[]): Promise<any> {
+	public async run(_client: Reso, _message: any, _args: string[]): Promise<any> {
 		return await Promise.resolve();
 	}
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

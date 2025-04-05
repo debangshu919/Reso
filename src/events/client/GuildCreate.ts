@@ -1,8 +1,8 @@
 import { EmbedBuilder, type Guild, type GuildMember, type TextChannel } from 'discord.js';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class GuildCreate extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'guildCreate',
 		});

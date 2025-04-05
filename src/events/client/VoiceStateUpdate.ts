@@ -1,8 +1,8 @@
 import { ChannelType, type GuildMember, type VoiceState } from 'discord.js';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class VoiceStateUpdate extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'voiceStateUpdate',
 		});
@@ -46,7 +46,7 @@ export default class VoiceStateUpdate extends Event {
 	}
 
 	handale = {
-		async join(newState: VoiceState, client: Lavamusic) {
+		async join(newState: VoiceState, client: Reso) {
 			await new Promise(resolve => setTimeout(resolve, 3000));
 			const bot = newState.guild.voiceStates.cache.get(client.user!.id);
 			if (!bot) return;
@@ -85,7 +85,7 @@ export default class VoiceStateUpdate extends Event {
 			}
 		},
 
-		async leave(newState: VoiceState, client: Lavamusic) {
+		async leave(newState: VoiceState, client: Reso) {
 			const player = client.manager.getPlayer(newState.guild.id);
 			if (!player) return;
 			if (!player?.voiceChannelId) return;
@@ -112,7 +112,7 @@ export default class VoiceStateUpdate extends Event {
 			}
 		},
 
-		async move(newState: VoiceState, client: Lavamusic) {
+		async move(newState: VoiceState, client: Reso) {
 			// delay for 3 seconds
 			await new Promise(resolve => setTimeout(resolve, 3000));
 			const bot = newState.guild.voiceStates.cache.get(client.user!.id);
@@ -133,7 +133,7 @@ export default class VoiceStateUpdate extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

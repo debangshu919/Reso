@@ -1,10 +1,10 @@
 import type { TextChannel } from 'discord.js';
 import type { Player, Track, TrackStartEvent } from 'lavalink-client';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 import { updateSetup } from '../../utils/SetupSystem';
 
 export default class QueueEnd extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'queueEnd',
 		});
@@ -36,7 +36,7 @@ export default class QueueEnd extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

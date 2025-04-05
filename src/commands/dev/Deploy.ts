@@ -8,10 +8,10 @@ import {
 	type Message,
 	type TextChannel,
 } from 'discord.js';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Deploy extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'deploy',
 			description: {
@@ -39,7 +39,7 @@ export default class Deploy extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, _args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, _args: string[]): Promise<any> {
 		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
 			new ButtonBuilder().setCustomId('deploy-global').setLabel('Global').setStyle(ButtonStyle.Secondary),
 			new ButtonBuilder().setCustomId('deploy-guild').setLabel('Guild').setStyle(ButtonStyle.Secondary),
@@ -108,7 +108,7 @@ export default class Deploy extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

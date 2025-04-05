@@ -24,7 +24,7 @@ import LavalinkClient from "./LavalinkClient";
 import Logger from "./Logger";
 import type { Command } from "./index";
 
-export default class Lavamusic extends Client {
+export default class Reso extends Client {
   public commands: Collection<string, any> = new Collection();
   public aliases: Collection<string, any> = new Collection();
   public db = new ServerData();
@@ -245,7 +245,7 @@ export default class Lavamusic extends Client {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

@@ -1,10 +1,10 @@
 import { LavalinkManager, type LavalinkNodeOptions, type SearchPlatform, type SearchResult } from 'lavalink-client';
 import { autoPlayFunction, requesterTransformer } from '../utils/functions/player';
-import type Lavamusic from './Lavamusic';
+import type Reso from './Reso';
 
 export default class LavalinkClient extends LavalinkManager {
-	public client: Lavamusic;
-	constructor(client: Lavamusic) {
+	public client: Reso;
+	constructor(client: Reso) {
 		super({
 			nodes: client.env.NODES as LavalinkNodeOptions[],
 			sendToShard: (guildId, payload) => client.guilds.cache.get(guildId)?.shard?.send(payload),
@@ -41,7 +41,7 @@ export default class LavalinkClient extends LavalinkManager {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

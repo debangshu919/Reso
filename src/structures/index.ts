@@ -1,12 +1,12 @@
 import Command from './Command';
 import Context from './Context';
 import Event from './Event';
-import Lavamusic from './Lavamusic';
+import Reso from './Reso';
 
-export { Event, Command, Lavamusic, Context };
+export { Event, Command, Reso, Context };
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

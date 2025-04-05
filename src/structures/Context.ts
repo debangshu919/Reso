@@ -17,7 +17,7 @@ import {
 } from 'discord.js';
 import { env } from '../env';
 import { T } from './I18n';
-import type { Lavamusic } from './index';
+import type { Reso } from './index';
 
 export default class Context {
 	public ctx: CommandInteraction | Message;
@@ -25,7 +25,7 @@ export default class Context {
 	public message: Message | null;
 	public id: string;
 	public channelId: string;
-	public client: Lavamusic;
+	public client: Reso;
 	public author: User | null;
 	public channel: TextBasedChannel;
 	public guild: Guild;
@@ -43,7 +43,7 @@ export default class Context {
 		this.channel = ctx.channel!;
 		this.id = ctx.id;
 		this.channelId = ctx.channelId;
-		this.client = ctx.client as Lavamusic;
+		this.client = ctx.client as Reso;
 		this.author = ctx instanceof Message ? ctx.author : ctx.user;
 		this.guild = ctx.guild!;
 		this.createdAt = ctx.createdAt;
@@ -155,7 +155,7 @@ function isMessagePayload(content: any): content is MessagePayload {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

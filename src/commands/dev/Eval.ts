@@ -1,10 +1,10 @@
 import util from 'node:util';
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 import { fetch } from 'undici';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class Eval extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'eval',
 			description: {
@@ -32,7 +32,7 @@ export default class Eval extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context, args: string[]): Promise<any> {
+	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const code = args.join(' ');
 		try {
 			let evaled = eval(code);
@@ -79,7 +79,7 @@ export default class Eval extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

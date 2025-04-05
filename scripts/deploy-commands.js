@@ -1,7 +1,7 @@
 require('dotenv/config');
 const { GatewayIntentBits } = require('discord.js');
 const { env } = require('../dist/env');
-const Lavamusic = require('../dist/structures/Lavamusic').default;
+const Reso = require('../dist/structures/Reso').default;
 const Logger = require('../dist/structures/Logger').default;
 const path = require('path');
 const fs = require('fs');
@@ -18,7 +18,7 @@ const fs = require('fs');
 const logger = new Logger();
 
 // Create a client instance with necessary intents
-const client = new Lavamusic({
+const client = new Reso({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildVoiceStates,
@@ -102,7 +102,7 @@ async function deployCommands() {
 deployCommands();
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

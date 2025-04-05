@@ -1,8 +1,8 @@
 import type { AutocompleteInteraction } from 'discord.js';
-import { Command, type Context, type Lavamusic } from '../../structures/index';
+import { Command, type Context, type Reso } from '../../structures/index';
 
 export default class StealPlaylist extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'steal',
 			description: {
@@ -45,7 +45,7 @@ export default class StealPlaylist extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		let targetUser = ctx.args[0];
 		const playlistName = ctx.args[1];
 		let targetUserId: string | null = null;
@@ -197,7 +197,7 @@ export default class StealPlaylist extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

@@ -1,6 +1,6 @@
 import type { ButtonInteraction, ClientEvents, Message } from 'discord.js';
 import type { LavalinkManagerEvents, NodeManagerEvents } from 'lavalink-client';
-import type Lavamusic from './Lavamusic';
+import type Reso from './Reso';
 
 // custom client events setupSystem and setupButtons
 interface CustomClientEvents {
@@ -15,13 +15,13 @@ interface EventOptions {
 }
 
 export default class Event {
-	public client: Lavamusic;
+	public client: Reso;
 	public one: boolean;
 	public file: string;
 	public name: keyof AllEvents;
 	public fileName: string;
 
-	constructor(client: Lavamusic, file: string, options: EventOptions) {
+	constructor(client: Reso, file: string, options: EventOptions) {
 		this.client = client;
 		this.file = file;
 		this.name = options.name;
@@ -35,7 +35,7 @@ export default class Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

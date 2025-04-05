@@ -1,9 +1,9 @@
 import { ApplicationCommandOptionType } from 'discord.js';
 import { EQList } from 'lavalink-client';
-import { Command, type Context, type Lavamusic } from '../../structures/index.js';
+import { Command, type Context, type Reso } from '../../structures/index.js';
 
 export default class BassBoost extends Command {
-	constructor(client: Lavamusic) {
+	constructor(client: Reso) {
 		super(client, {
 			name: 'bassboost',
 			description: {
@@ -45,7 +45,7 @@ export default class BassBoost extends Command {
 		});
 	}
 
-	public async run(client: Lavamusic, ctx: Context): Promise<any> {
+	public async run(client: Reso, ctx: Context): Promise<any> {
 		const player = client.manager.getPlayer(ctx.guild!.id);
 		if (!player) return await ctx.sendMessage(ctx.locale('event.message.no_music_playing'));
 		switch (ctx.args[0]?.toLowerCase()) {
@@ -102,7 +102,7 @@ export default class BassBoost extends Command {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

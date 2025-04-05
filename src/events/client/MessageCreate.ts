@@ -11,10 +11,10 @@ import {
 	type TextChannel,
 } from 'discord.js';
 import { T } from '../../structures/I18n';
-import { Context, Event, type Lavamusic } from '../../structures/index';
+import { Context, Event, type Reso } from '../../structures/index';
 
 export default class MessageCreate extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'messageCreate',
 		});
@@ -273,7 +273,7 @@ export default class MessageCreate extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

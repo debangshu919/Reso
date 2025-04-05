@@ -42,7 +42,7 @@ const envSchema = z.object({
 		},
 		z.enum(['online', 'idle', 'dnd', 'invisible']).default('online'),
 	),
-	BOT_ACTIVITY: z.string().default('Lavamusic'),
+	BOT_ACTIVITY: z.string().default('Reso'),
 	BOT_ACTIVITY_TYPE: z.preprocess(val => {
 		if (typeof val === 'string') {
 			return Number.parseInt(val, 10);
@@ -76,7 +76,7 @@ for (const key in env) {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

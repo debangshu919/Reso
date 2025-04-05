@@ -110,7 +110,7 @@ export async function autoPlayFunction(player: Player, lastTrack?: Track): Promi
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

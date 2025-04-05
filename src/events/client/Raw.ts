@@ -1,9 +1,9 @@
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 
 export default class Raw extends Event {
-	client: Lavamusic;
+	client: Reso;
 
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'raw',
 		});
@@ -16,7 +16,7 @@ export default class Raw extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

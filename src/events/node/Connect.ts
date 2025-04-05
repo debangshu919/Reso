@@ -1,9 +1,9 @@
 import type { LavalinkNode } from 'lavalink-client';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 import { sendLog } from '../../utils/BotLog';
 
 export default class Connect extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'connect',
 		});
@@ -53,7 +53,7 @@ export default class Connect extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders

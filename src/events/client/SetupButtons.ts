@@ -1,13 +1,13 @@
 import type { Message } from 'discord.js';
 import { T } from '../../structures/I18n';
-import { Event, type Lavamusic } from '../../structures/index';
+import { Event, type Reso } from '../../structures/index';
 import type { Requester } from '../../types';
 import { getButtons } from '../../utils/Buttons';
 import { buttonReply } from '../../utils/SetupSystem';
 import { checkDj } from '../player/TrackStart';
 
 export default class SetupButtons extends Event {
-	constructor(client: Lavamusic, file: string) {
+	constructor(client: Reso, file: string) {
 		super(client, file, {
 			name: 'setupButtons',
 		});
@@ -262,7 +262,7 @@ export default class SetupButtons extends Event {
 }
 
 /**
- * Project: lavamusic
+ * Project: Reso
  * Author: Appu
  * Main Contributor: LucasB25
  * Company: Coders
