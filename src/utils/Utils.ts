@@ -10,8 +10,24 @@ import {
 } from 'discord.js';
 import type { Context, Reso } from '../structures/index';
 
+
 // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export class Utils {
+	private static statusMessages = [
+		{text: "your music", type: ActivityType.Listening},
+		{text: "with TypeScript", type: ActivityType.Playing},
+		{text: "Resonating with your sound", type: ActivityType.Custom},
+		{text: `in `, type: ActivityType.Streaming}
+	];
+	
+	private static currentStatusIndex = 0;
+	
+	public static getNextStatus(): {text: string, type: number} {
+		const status = this.statusMessages[this.currentStatusIndex];
+		this.currentStatusIndex = (this.currentStatusIndex + 1) % this.statusMessages.length;
+		return status;
+	}
+
 	public static formatTime(ms: number): string {
 		const minuteMs = 60 * 1000;
 		const hourMs = 60 * minuteMs;
@@ -24,17 +40,31 @@ export class Utils {
 
 	public static updateStatus(client: Reso, guildId?: string): void {
 		const { user } = client;
-		if (user && client.env.GUILD_ID && guildId === client.env.GUILD_ID) {
-			const player = client.manager.getPlayer(client.env.GUILD_ID);
-			user.setPresence({
-				activities: [
-					{
-						name: player?.queue?.current ? `🎶 | ${player.queue?.current.info.title}` : client.env.BOT_ACTIVITY,
-						type: player?.queue?.current ? ActivityType.Listening : client.env.BOT_ACTIVITY_TYPE,
-					},
-				],
-				status: client.env.BOT_STATUS as any,
-			});
+		if (user) {
+			if (client.env.GUILD_ID && guildId === client.env.GUILD_ID) {
+				const player = client.manager.getPlayer(client.env.GUILD_ID);
+				user.setPresence({
+					activities: [
+						{
+							name: player?.queue?.current ? `🎶 | ${player.queue?.current.info.title}` : client.env.BOT_ACTIVITY,
+							type: player?.queue?.current ? ActivityType.Listening : client.env.BOT_ACTIVITY_TYPE,
+						},
+					],
+					status: client.env.BOT_STATUS as any,
+				});
+			} else {
+				// Use dynamic status when not in the configured guild or no guildId provided
+				const status = this.getNextStatus();
+				user.setPresence({
+					activities: [
+						{
+							name: status.text,
+							type: status.type,
+						},
+					],
+					status: client.env.BOT_STATUS as any,
+				});
+			}
 		}
 	}
 

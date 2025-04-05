@@ -1,5 +1,6 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 import { Command, type Context, type Reso } from '../../structures/index';
+import { getFormattedUptime } from '../../utils/functions/UptimeTracker';
 
 export default class About extends Command {
 	constructor(client: Reso) {
@@ -51,6 +52,16 @@ export default class About extends Command {
 			.setStyle(ButtonStyle.Link)
 			.setURL('https://resobot.live');
 		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(inviteButton, supportButton, premiumButton, websiteButton);
+		
+		// Get the current bot uptime
+		const uptime = getFormattedUptime();
+		
+		// Get the server count
+		const serverCount = client.guilds.cache.size;
+		
+		// Get bot ping
+		const ping = client.ws.ping;
+		
 		const embed = this.client
 			.embed()
 			.setAuthor({
@@ -71,13 +82,33 @@ export default class About extends Command {
 					inline: false,
 				},
 				{
+					name: ctx.locale('cmd.about.fields.version'),
+					value: `v1.0.0`,
+					inline: true,
+				},
+				{
+					name: ctx.locale('cmd.about.fields.ping'),
+					value: `${ping}ms`,
+					inline: true,
+				},
+				{
+					name: ctx.locale('cmd.about.fields.uptime'),
+					value: uptime,
+					inline: true,
+				},
+				{
+					name: ctx.locale('cmd.about.fields.servers'),
+					value: serverCount.toString(),
+					inline: true,
+				},
+				{
 					name: ctx.locale('cmd.about.fields.creator'),
 					value: '[chromavisionmusic](https://discord.com/users/1063860912173359114)',
 					inline: true,
 				},
 				{
 					name: ctx.locale('cmd.about.fields.support'),
-					value: '[Here](https://discord.gg/YUFvu5hgFP)',
+					value: '[Reso Labs](https://discord.gg/YUFvu5hgFP)',
 					inline: true,
 				},
 			)

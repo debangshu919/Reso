@@ -48,7 +48,10 @@
 				"creator": "Creador",
 				"repository": "Repositorio",
 				"support": "Soporte",
-				"description": "Reso es un bot de música para Discord, escrito en JavaScript utilizando las bibliotecas Discord.js, Typescript y lavalink-client (Lavalink). ¡Espero que disfrutes usando Reso!"
+				"uptime": "Tiempo de Actividad",
+				"servers": "Servidores",
+				"ping": "Latencia",
+				"description": "¡Hola! Soy Reso, un bot de música lleno de funciones para Discord. Estoy diseñado para brindar una experiencia musical perfecta y agradable para tu servidor. Con una amplia gama de comandos y opciones de personalización, estoy aquí para hacer que tus momentos musicales sean inolvidables. ¡Vamos a bailar juntos!"
 			}
 		},
 		"dj": {

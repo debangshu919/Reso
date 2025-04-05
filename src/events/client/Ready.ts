@@ -22,6 +22,11 @@ export default class Ready extends Event {
 			status: env.BOT_STATUS as any,
 		});
 
+		// Set up status rotation interval (every 30 seconds)
+		setInterval(() => {
+			this.client.utils.updateStatus(this.client);
+		}, 30000);
+
 		if (env.TOPGG) {
 			const autoPoster = AutoPoster(env.TOPGG, this.client);
 			setInterval(() => {

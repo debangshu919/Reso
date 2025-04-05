@@ -49,6 +49,10 @@
 				"creator": "Developer",
 				"repository": "Repository",
 				"support": "Support",
+				"uptime": "Uptime",
+				"servers": "Servers",
+				"ping": "Ping",
+				"version": "Version",
 				"description": "Hey there! I'm Reso, a feature-rich music bot for Discord. I'm designed to provide a seamless and enjoyable music experience for your server. With a wide range of commands and customization options, I'm here to make your music moments unforgettable. Let's groove together!"
 			}
 		},
