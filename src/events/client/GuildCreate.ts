@@ -72,11 +72,3 @@ export default class GuildCreate extends Event {
 }
 
 /**
- * Project: Reso
- * Author: Debangshu
- * Company: Reso Labs
- * Copyright (c) 2025. All rights reserved.
- * This code is the property of Reso Labs and may not be reproduced or
- * modified without permission. For more information, contact us at
- * https://discord.gg/YUFvu5hgFP
- */

@@ -17,7 +17,6 @@ export class Utils {
 		{text: "your music", type: ActivityType.Listening},
 		{text: "with TypeScript", type: ActivityType.Playing},
 		{text: "Resonating with your sound", type: ActivityType.Custom},
-		{text: `in `, type: ActivityType.Streaming}
 	];
 	
 	private static currentStatusIndex = 0;
@@ -215,7 +214,3 @@ export class Utils {
 }
 
 /**
- * Project: Reso
- * Author: Appu
- * Main Contributor: LucasB25
- */
