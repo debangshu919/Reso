@@ -18,6 +18,11 @@
     "lint": "biome check src",
     "format": "biome check --write src"
   },
+  "lint-staged": {
+    "*.ts": [
+      "npm run format"
+    ]
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.8.1",
