@@ -1,10 +1,14 @@
 import path from "node:path"
 import util from "node:util"
+import * as SourceMapSupport from "source-map-support"
 import { createLogger, format, transports } from "winston"
 import type {
 	ConsoleTransportInstance,
 	FileTransportInstance,
 } from "winston/lib/winston/transports"
+
+// Enable source map support for better stack traces
+SourceMapSupport.install()
 
 const consoleLogFormat = format.printf((info) => {
 	const { level, message, timestamp, meta = {} } = info
