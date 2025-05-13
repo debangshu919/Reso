@@ -63,6 +63,10 @@ const consoleLogFormat = format.printf((info) => {
 		colors: true,
 	})
 
+	if (!info.meta) {
+		return `${customTimestamp} [${customLevel}] ${customMessage}\n`
+	}
+
 	const customLog = `${customTimestamp} [${customLevel}] ${customMessage}\n${magenta(
 		"META",
 	)}:\t${customMeta}\n`
