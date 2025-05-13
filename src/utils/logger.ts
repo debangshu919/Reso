@@ -1,5 +1,17 @@
 import path from "node:path"
 import util from "node:util"
+import {
+	bgGreen,
+	bgRed,
+	bgYellow,
+	blue,
+	bold,
+	green,
+	magenta,
+	red,
+	underline,
+	yellow,
+} from "colorette"
 import * as SourceMapSupport from "source-map-support"
 import { createLogger, format, transports } from "winston"
 import type {
@@ -10,19 +22,50 @@ import type {
 // Enable source map support for better stack traces
 SourceMapSupport.install()
 
+const colorizeLevel = (level: string): string => {
+	switch (level) {
+		case "ERROR":
+			return red(bold(level))
+		case "WARN":
+			return yellow(underline(level))
+		case "INFO":
+			return green(level)
+		default:
+			return level
+	}
+}
+
+const colorizeTimestamp = (timestamp: string, level: string): string => {
+	switch (level) {
+		case "ERROR":
+			return bgRed(timestamp)
+		case "WARN":
+			return bgYellow(timestamp)
+		case "INFO":
+			return bgGreen(timestamp)
+		default:
+			return timestamp
+	}
+}
+
 const consoleLogFormat = format.printf((info) => {
 	const { level, message, timestamp, meta = {} } = info
 
-	const customLevel = level.toUpperCase()
-	const customTimestamp = timestamp
-	const customMessage = message
+	const customLevel = colorizeLevel(level.toUpperCase())
+	const customTimestamp = colorizeTimestamp(
+		timestamp as string,
+		info.level.toUpperCase(),
+	)
+	const customMessage = blue(message as string)
 	const customMeta = util.inspect(meta, {
 		showHidden: false,
 		depth: null,
 		colors: true,
 	})
 
-	const customLog = `${customTimestamp} [${customLevel}] ${customMessage}\nMETA: ${customMeta}\n`
+	const customLog = `${customTimestamp} [${customLevel}] ${customMessage}\n${magenta(
+		"META",
+	)}:\t${customMeta}\n`
 
 	return customLog
 })
