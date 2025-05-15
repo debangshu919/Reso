@@ -1,17 +1,4 @@
 import path from "node:path"
-// import util from "node:util";
-// import {
-//   bgGreen,
-//   bgRed,
-//   bgYellow,
-//   blue,
-//   bold,
-//   green,
-//   magenta,
-//   red,
-//   underline,
-//   yellow,
-// } from "colorette";
 import * as SourceMapSupport from "source-map-support"
 // biome-ignore lint/style/useImportType: <explanation>
 import {
@@ -20,65 +7,10 @@ import {
 	format,
 	transports,
 } from "winston"
-import type {
-	//   ConsoleTransportInstance,
-	FileTransportInstance,
-} from "winston/lib/winston/transports"
+import type { FileTransportInstance } from "winston/lib/winston/transports"
 
 // Enable source map support for better stack traces
 SourceMapSupport.install()
-
-// const colorizeLevel = (level: string): string => {
-//   switch (level) {
-//     case "ERROR":
-//       return red(bold(level));
-//     case "WARN":
-//       return yellow(underline(level));
-//     case "INFO":
-//       return green(level);
-//     default:
-//       return level;
-//   }
-// };
-
-// const colorizeTimestamp = (timestamp: string, level: string): string => {
-//   switch (level) {
-//     case "ERROR":
-//       return bgRed(timestamp);
-//     case "WARN":
-//       return bgYellow(timestamp);
-//     case "INFO":
-//       return bgGreen(timestamp);
-//     default:
-//       return timestamp;
-//   }
-// };
-
-// const consoleLogFormat = format.printf((info) => {
-//   const { level, message, timestamp, meta = {} } = info;
-
-//   const customLevel = colorizeLevel(level.toUpperCase());
-//   const customTimestamp = colorizeTimestamp(
-//     timestamp as string,
-//     info.level.toUpperCase()
-//   );
-//   const customMessage = blue(message as string);
-//   const customMeta = util.inspect(meta, {
-//     showHidden: false,
-//     depth: null,
-//     colors: true,
-//   });
-
-//   if (!info.meta) {
-//     return `${customTimestamp} [${customLevel}] ${customMessage}\n`;
-//   }
-
-//   const customLog = `${customTimestamp} [${customLevel}] ${customMessage}\n${magenta(
-//     "META"
-//   )}:\t${customMeta}\n`;
-
-//   return customLog;
-// });
 
 const fileLogFormat = format.printf((info) => {
 	const { level, message, timestamp, meta = {} } = info
@@ -105,15 +37,6 @@ const fileLogFormat = format.printf((info) => {
 
 	return JSON.stringify(logData, null, 4)
 })
-
-// const consoleTransport = (): Array<ConsoleTransportInstance> => {
-//   return [
-//     new transports.Console({
-//       level: "info",
-//       format: format.combine(format.timestamp(), consoleLogFormat),
-//     }),
-//   ];
-// };
 
 const fileTransport = (): Array<FileTransportInstance> => {
 	return [
