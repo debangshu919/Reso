@@ -15,11 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "prisma": "npx prisma generate",
     "prepare": "husky",
     "build": "npx tsc",
     "lint": "biome check src",
     "format": "biome check --write src",
-    "deploy": "npm run build && node scripts/deploy-commands.js 1337477435964395624",
+    "deploy": "npm run build && node scripts/deploy-commands.js",
     "dev": "npx tsc-watch --onSuccess \"node dist/index.js\"",
     "start": "node dist/index.js"
   },
@@ -57,7 +58,8 @@
     "source-map-support": "^0.5.21",
     "topgg-autoposter": "^2.0.2",
     "winston": "^3.17.0",
-    "zod": "^3.24.4"
+    "zod": "^3.24.4",
+    "prisma": "^6.8.2"
   },
   "signale": {
     "displayScope": true,
