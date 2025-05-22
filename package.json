@@ -12,11 +12,13 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "build": "npx tsc",
     "lint": "biome check src",
-    "format": "biome check --write src"
+    "format": "biome check --write src",
+    "deploy": "npm run build && node scripts/deploy-commands.js 1337477435964395624",
+    "dev": "npx tsc-watch --onSuccess \"node dist/index.js\"",
+    "start": "node dist/index.js"
   },
   "lint-staged": {
     "*.ts": [
@@ -27,18 +29,28 @@
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@types/i18n": "^0.13.12",
     "@types/node": "^22.15.17",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "tsc-watch": "^6.3.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "@top-gg/sdk": "^3.1.6",
+    "@types/signale": "^1.4.7",
     "@types/source-map-support": "^0.5.10",
     "colorette": "^2.0.20",
+    "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
+    "i18n": "^0.15.1",
+    "lavalink-client": "^2.5.3",
+    "signale": "^1.4.0",
     "source-map-support": "^0.5.21",
+    "topgg-autoposter": "^2.0.2",
     "winston": "^3.17.0",
     "zod": "^3.24.4"
   }

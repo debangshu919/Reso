@@ -1,8 +1,8 @@
 require("dotenv/config");
 const { GatewayIntentBits } = require("discord.js");
 const { env } = require("../dist/env");
-const Reso = require("../dist/structures/Reso").default;
-const Logger = require("../dist/structures/Logger").default;
+const Reso = require("../dist/classes/Reso").default;
+const { Logger } = require("../dist/classes/Logger");
 const path = require("node:path");
 const fs = require("node:fs");
 
@@ -68,7 +68,6 @@ async function deployCommands() {
 		const slashCommands = findSlashCommands();
 		logger.info(`Found ${slashCommands.length} slash commands to deploy:`);
 
-		// biome-ignore lint/complexity/noForEach: <explanation>
 		slashCommands.forEach((cmd) => {
 			logger.info(`- ${cmd.name} (${cmd.category})`);
 		});
