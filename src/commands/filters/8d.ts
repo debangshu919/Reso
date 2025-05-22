@@ -1,4 +1,4 @@
-import { Command, type Context, type Reso } from "../../structures/index.js"
+import { Command, type Context, type Reso } from "../../classes/index.js"
 
 export default class _8d extends Command {
 	constructor(client: Reso) {
