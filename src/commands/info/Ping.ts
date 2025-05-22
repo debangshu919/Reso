@@ -51,7 +51,24 @@ export default class Ping extends Command {
 				iconURL: client.user?.displayAvatarURL(),
 			})
 			.setColor(this.client.color.main)
-			.addFields([
+			.setFooter({
+				text: ctx.locale("cmd.ping.requested_by", {
+					author: ctx.author?.tag,
+				}),
+				iconURL: ctx.author?.displayAvatarURL({}),
+			})
+			.setTimestamp()
+
+		if (ctx.isInteraction) {
+			embed.addFields([
+				{
+					name: ctx.locale("cmd.ping.api_latency"),
+					value: `\`\`\`diff\n${apiLatencySign} ${apiLatency}ms\n\`\`\``,
+					inline: true,
+				},
+			])
+		} else {
+			embed.addFields([
 				{
 					name: ctx.locale("cmd.ping.bot_latency"),
 					value: `\`\`\`diff\n${botLatencySign} ${botLatency}ms\n\`\`\``,
@@ -63,13 +80,7 @@ export default class Ping extends Command {
 					inline: true,
 				},
 			])
-			.setFooter({
-				text: ctx.locale("cmd.ping.requested_by", {
-					author: ctx.author?.tag,
-				}),
-				iconURL: ctx.author?.displayAvatarURL({}),
-			})
-			.setTimestamp()
+		}
 
 		return await ctx.editMessage({ content: "", embeds: [embed] })
 	}
