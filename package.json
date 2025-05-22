@@ -1,11 +1,14 @@
 {
-  "name": "buzz",
+  "name": "reso",
   "version": "1.0.0",
-  "description": "A discord music bot written in typescript",
+  "description": "Reso is a Discord music bot, written in JavaScript using the Discord.js, Typescript, lavalink-client (Lavalink) library.",
   "keywords": [
     "music",
     "bot",
-    "discord"
+    "discord",
+    "reso",
+    "lavalink",
+    "typescript"
   ],
   "license": "ISC",
   "author": "debangshu919",
@@ -55,5 +58,14 @@
     "topgg-autoposter": "^2.0.2",
     "winston": "^3.17.0",
     "zod": "^3.24.4"
+  },
+  "signale": {
+    "displayScope": true,
+    "displayBadge": true,
+    "displayDate": true,
+    "displayFilename": true,
+    "displayLabel": true,
+    "displayTimestamp": true,
+    "underlineLabel": true
   }
 }
