@@ -46,6 +46,7 @@
     "colorette": "^2.0.20",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
+    "genius-lyrics-api": "^3.2.1",
     "i18n": "^0.15.1",
     "lavalink-client": "^2.5.3",
     "node-system-stats": "^2.0.5",
