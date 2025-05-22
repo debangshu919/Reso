@@ -59,10 +59,8 @@ export default class Command {
 
 	public async run(
 		_client: Reso,
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 		_message: any,
 		_args: string[],
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	): Promise<any> {
 		return await Promise.resolve()
 	}
