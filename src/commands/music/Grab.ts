@@ -38,8 +38,8 @@ export default class Grab extends Command {
 
 	public async run(client: Reso, ctx: Context): Promise<any> {
 		const player = client.manager.getPlayer(ctx.guild!.id)
-
-		await ctx.sendDeferMessage(ctx.locale("cmd.grab.loading"))
+		if (ctx.isInteraction)
+			await ctx.sendDeferMessage(ctx.locale("cmd.grab.loading"))
 
 		if (!player?.queue.current) {
 			return await ctx.sendMessage({
@@ -76,8 +76,17 @@ export default class Grab extends Command {
 						.setColor(this.client.color.main),
 				],
 			})
-
-			return await ctx.editMessage({
+			if (ctx.isInteraction) {
+				return await ctx.editMessage({
+					embeds: [
+						this.client
+							.embed()
+							.setDescription(ctx.locale("cmd.grab.check_dm"))
+							.setColor(this.client.color.green),
+					],
+				})
+			}
+			return await ctx.sendMessage({
 				embeds: [
 					this.client
 						.embed()
@@ -86,7 +95,17 @@ export default class Grab extends Command {
 				],
 			})
 		} catch (_e) {
-			return await ctx.editMessage({
+			if (ctx.isInteraction) {
+				return await ctx.editMessage({
+					embeds: [
+						this.client
+							.embed()
+							.setDescription(ctx.locale("cmd.grab.dm_failed"))
+							.setColor(this.client.color.red),
+					],
+				})
+			}
+			return await ctx.sendMessage({
 				embeds: [
 					this.client
 						.embed()

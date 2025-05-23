@@ -58,7 +58,8 @@ export default class Play extends Command {
 
 	public async run(client: Reso, ctx: Context, args: string[]): Promise<any> {
 		const query = args.join(" ")
-		await ctx.sendDeferMessage(ctx.locale("cmd.play.loading"))
+		if (ctx.isInteraction)
+			await ctx.sendDeferMessage(ctx.locale("cmd.play.loading"))
 		let player = client.manager.getPlayer(ctx.guild!.id)
 		const memberVoiceChannel = (ctx.member as any).voice.channel as VoiceChannel
 
@@ -80,7 +81,17 @@ export default class Play extends Command {
 		const embed = this.client.embed()
 
 		if (!response || response.tracks?.length === 0) {
-			return await ctx.editMessage({
+			if (ctx.isInteraction) {
+				return await ctx.editMessage({
+					content: "",
+					embeds: [
+						embed
+							.setColor(this.client.color.red)
+							.setDescription(ctx.locale("cmd.play.errors.search_error")),
+					],
+				})
+			}
+			return await ctx.sendMessage({
 				content: "",
 				embeds: [
 					embed
@@ -95,7 +106,19 @@ export default class Play extends Command {
 		)
 
 		if (response.loadType === "playlist") {
-			await ctx.editMessage({
+			if (ctx.isInteraction) {
+				await ctx.editMessage({
+					content: "",
+					embeds: [
+						embed.setColor(this.client.color.main).setDescription(
+							ctx.locale("cmd.play.added_playlist_to_queue", {
+								length: response.tracks.length,
+							}),
+						),
+					],
+				})
+			}
+			await ctx.sendMessage({
 				content: "",
 				embeds: [
 					embed.setColor(this.client.color.main).setDescription(
@@ -106,7 +129,20 @@ export default class Play extends Command {
 				],
 			})
 		} else {
-			await ctx.editMessage({
+			if (ctx.isInteraction) {
+				await ctx.editMessage({
+					content: "",
+					embeds: [
+						embed.setColor(this.client.color.main).setDescription(
+							ctx.locale("cmd.play.added_to_queue", {
+								title: response.tracks[0].info.title,
+								uri: response.tracks[0].info.uri,
+							}),
+						),
+					],
+				})
+			}
+			await ctx.sendMessage({
 				content: "",
 				embeds: [
 					embed.setColor(this.client.color.main).setDescription(

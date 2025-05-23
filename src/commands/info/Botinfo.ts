@@ -39,7 +39,8 @@ export default class Botinfo extends Command {
 	}
 
 	public async run(client: Reso, ctx: Context): Promise<any> {
-		await ctx.sendDeferMessage({ content: "Loading botinfo..." })
+		if (ctx.isInteraction)
+			await ctx.sendDeferMessage({ content: "Loading botinfo..." })
 		const osInfo = `${os.type()} ${os.release()}`
 		const osUptime = client.utils.formatTime(os.uptime())
 		const osHostname = os.hostname()
@@ -93,8 +94,12 @@ export default class Botinfo extends Command {
 				.embed()
 				.setColor(this.client.color.main)
 				.setDescription(botInfo)
-
-			return await ctx.editMessage({
+			if (ctx.isInteraction) {
+				return await ctx.editMessage({
+					embeds: [embed],
+				})
+			}
+			return await ctx.sendMessage({
 				embeds: [embed],
 			})
 		})
