@@ -12,7 +12,6 @@ COPY src src
 COPY scripts scripts
 COPY prisma prisma
 COPY tsconfig.json ./
-COPY .env ./
     
 RUN npm run prisma
 RUN npm run build
