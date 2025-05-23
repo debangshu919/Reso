@@ -5,6 +5,3 @@ package-lock.json
 dist
 .vscode
 test.ts
-
-ci.yml
-cd.yml
