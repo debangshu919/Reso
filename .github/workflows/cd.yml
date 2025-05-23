@@ -23,22 +23,22 @@ jobs:
           sudo docker run -d \
             --name reso-container \
             -p 8000:8000 \
-            -e TOKEN=${{ secrets.TOKEN }} \
-            -e CLIENT_ID=${{ secrets.CLIENT_ID }} \
-            -e DEFAULT_LANGUAGE=${{ secrets.DEFAULT_LANGUAGE }} \
-            -e PREFIX=${{ secrets.PREFIX }} \
-            -e OWNER_IDS=${{ secrets.OWNER_IDS }} \
-            -e GUILD_ID=${{ secrets.GUILD_ID }} \
-            -e TOPGG=${{ secrets.TOPGG }} \
-            -e KEEP_ALIVE=${{ secrets.KEEP_ALIVE }} \
-            -e LOG_CHANNEL_ID=${{ secrets.LOG_CHANNEL_ID }} \
-            -e LOG_COMMANDS_ID=${{ secrets.LOG_COMMANDS_ID }} \
-            -e BOT_STATUS=${{ secrets.BOT_STATUS }} \
-            -e BOT_ACTIVITY_TYPE=${{ secrets.BOT_ACTIVITY_TYPE }} \
-            -e BOT_ACTIVITY=${{ secrets.BOT_ACTIVITY }} \
-            -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
-            -e AUTO_NODE=${{ secrets.AUTO_NODE }} \
-            -e SEARCH_ENGINE=${{ secrets.SEARCH_ENGINE }} \
-            -e GENIUS_API=${{ secrets.GENIUS_API }} \
-            -e NODES=${{ secrets.NODES }} \
+            -e TOKEN="${{ secrets.TOKEN }}" \
+            -e CLIENT_ID="${{ secrets.CLIENT_ID }}" \
+            -e DEFAULT_LANGUAGE="${{ secrets.DEFAULT_LANGUAGE }}" \
+            -e PREFIX="${{ secrets.PREFIX }}" \
+            -e OWNER_IDS="${{ secrets.OWNER_IDS }}" \
+            -e GUILD_ID="${{ secrets.GUILD_ID }}" \
+            -e TOPGG="${{ secrets.TOPGG }}" \
+            -e KEEP_ALIVE="${{ secrets.KEEP_ALIVE }}" \
+            -e LOG_CHANNEL_ID="${{ secrets.LOG_CHANNEL_ID }}" \
+            -e LOG_COMMANDS_ID="${{ secrets.LOG_COMMANDS_ID }}" \
+            -e BOT_STATUS="${{ secrets.BOT_STATUS }}" \
+            -e BOT_ACTIVITY_TYPE="${{ secrets.BOT_ACTIVITY_TYPE }}" \
+            -e BOT_ACTIVITY="${{ secrets.BOT_ACTIVITY }}" \
+            -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+            -e AUTO_NODE="${{ secrets.AUTO_NODE }}" \
+            -e SEARCH_ENGINE="${{ secrets.SEARCH_ENGINE }}" \
+            -e GENIUS_API="${{ secrets.GENIUS_API }}" \
+            -e NODES="${{ secrets.NODES }}" \
             debangshu919/reso:latest
