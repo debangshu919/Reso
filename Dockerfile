@@ -22,6 +22,8 @@ FROM node:18 AS runner
 
 WORKDIR /reso
 
+RUN npm install -g pm2
+
 COPY --from=builder build/package*.json ./
 COPY --from=builder build/node_modules ./node_modules
 COPY --from=builder build/dist ./dist
@@ -48,4 +50,4 @@ COPY --from=builder build/src ./src
 # ENV GENIUS_API=${GENIUS_API}
 # ENV NODES=${NODES}
 
-CMD ["npm", "start"]
+CMD ["pm2-runtime", "dist/index.js", "--name", "reso"]
