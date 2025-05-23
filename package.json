@@ -15,11 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "prisma": "npx prisma generate",
     "prepare": "husky",
     "build": "npx tsc",
     "lint": "biome check src",
     "format": "biome check --write src",
-    "deploy": "npm run build && node scripts/deploy-commands.js 1337477435964395624",
+    "deploy": "npm run build && node scripts/deploy-commands.js",
     "dev": "npx tsc-watch --onSuccess \"node dist/index.js\"",
     "start": "node dist/index.js"
   },
