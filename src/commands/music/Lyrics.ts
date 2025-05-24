@@ -6,10 +6,36 @@ import {
 	ComponentType,
 	type TextChannel,
 } from "discord.js"
-import { getLyrics } from "genius-lyrics-api"
+import { Client as GeniusClient } from "genius-lyrics"
 import { Command, type Context, type Reso } from "../../classes/index"
 
 export default class Lyrics extends Command {
+	private genius: GeniusClient
+
+	private cleanLyrics(lyrics: string): string {
+		// Remove contributor lines
+		let cleaned = lyrics.replace(/^\d+\s*Contributors.*$/m, "")
+
+		// Remove song title with "Lyric" at the end
+		cleaned = cleaned.replace(/^.*?Lyric\s*$/m, "")
+
+		// Remove [Verse], [Chorus], etc.
+		cleaned = cleaned.replace(/\[.*?\]/g, "")
+
+		// Remove "Lyrics" or "Lyrics for" at the start
+		cleaned = cleaned.replace(/^(?:Lyrics|Lyrics for|Lyrics of).*?\n/i, "")
+
+		// Remove "Embed" text that sometimes appears
+		cleaned = cleaned.replace(/Embed$/i, "")
+
+		// Remove extra newlines
+		cleaned = cleaned.replace(/\n{3,}/g, "\n\n")
+
+		// Trim whitespace
+		cleaned = cleaned.trim()
+
+		return cleaned
+	}
 	constructor(client: Reso) {
 		super(client, {
 			name: "lyrics",
@@ -42,6 +68,7 @@ export default class Lyrics extends Command {
 			slashCommand: true,
 			options: [],
 		})
+		this.genius = new GeniusClient(client.env.GENIUS_API)
 	}
 
 	public async run(client: Reso, ctx: Context): Promise<any> {
@@ -60,17 +87,26 @@ export default class Lyrics extends Command {
 			ctx.locale("cmd.lyrics.searching", { trackTitle }),
 		)
 
-		const options = {
-			apiKey: client.env.GENIUS_API,
-			title: trackTitle,
-			artist: artistName,
-			optimizeQuery: true,
-		}
-
 		try {
-			const lyrics = await getLyrics(options)
-			if (lyrics) {
-				const lyricsPages = this.paginateLyrics(lyrics)
+			const searches = await this.genius.songs.search(
+				`${trackTitle} ${artistName}`,
+			)
+			const song = searches[0]
+
+			if (!song) {
+				return await ctx.editMessage({
+					embeds: [
+						embed
+							.setColor(client.color.red)
+							.setDescription(ctx.locale("cmd.lyrics.errors.no_results")),
+					],
+				})
+			}
+
+			const lyrics = await song.lyrics()
+			const cleanedLyrics = this.cleanLyrics(lyrics)
+			if (cleanedLyrics) {
+				const lyricsPages = this.paginateLyrics(cleanedLyrics)
 				let currentPage = 0
 
 				const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
