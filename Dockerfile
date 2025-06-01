@@ -31,7 +31,6 @@ COPY --from=builder build/locales ./locales
 COPY --from=builder build/scripts ./scripts
 COPY --from=builder build/src ./src
 
-# ENV TOKEN=${TOKEN}
 # ENV CLIENT_ID=${CLIENT_ID}
 # ENV DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
 # ENV PREFIX=${PREFIX}
