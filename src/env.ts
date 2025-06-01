@@ -80,7 +80,6 @@ const envSchema = z.object({
 		(val) => (typeof val === "string" ? JSON.parse(val) : val),
 		z.array(LavalinkNodeSchema),
 	),
-	GENIUS_API: z.string().optional(),
 })
 
 type Env = z.infer<typeof envSchema>

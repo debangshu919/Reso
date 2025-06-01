@@ -6,36 +6,29 @@ import {
 	ComponentType,
 	type TextChannel,
 } from "discord.js"
-import { Client as GeniusClient } from "genius-lyrics"
 import { Command, type Context, type Reso } from "../../classes/index"
 
 export default class Lyrics extends Command {
-	private genius: GeniusClient
+	private async fetchLyrics(
+		artist: string,
+		title: string,
+	): Promise<string | null> {
+		try {
+			const response = await fetch(
+				`https://api.lyrics.ovh/v1/${encodeURIComponent(
+					artist,
+				)}/${encodeURIComponent(title)}`,
+			)
 
-	private cleanLyrics(lyrics: string): string {
-		// Remove contributor lines
-		let cleaned = lyrics.replace(/^\d+\s*Contributors.*$/m, "")
+			if (!response.ok) return null
 
-		// Remove song title with "Lyric" at the end
-		cleaned = cleaned.replace(/^.*?Lyric\s*$/m, "")
-
-		// Remove [Verse], [Chorus], etc.
-		cleaned = cleaned.replace(/\[.*?\]/g, "")
-
-		// Remove "Lyrics" or "Lyrics for" at the start
-		cleaned = cleaned.replace(/^(?:Lyrics|Lyrics for|Lyrics of).*?\n/i, "")
-
-		// Remove "Embed" text that sometimes appears
-		cleaned = cleaned.replace(/Embed$/i, "")
-
-		// Remove extra newlines
-		cleaned = cleaned.replace(/\n{3,}/g, "\n\n")
-
-		// Trim whitespace
-		cleaned = cleaned.trim()
-
-		return cleaned
+			const data = await response.json()
+			return data.lyrics
+		} catch (error) {
+			return null
+		}
 	}
+
 	constructor(client: Reso) {
 		super(client, {
 			name: "lyrics",
@@ -68,7 +61,6 @@ export default class Lyrics extends Command {
 			slashCommand: true,
 			options: [],
 		})
-		this.genius = new GeniusClient(client.env.GENIUS_API)
 	}
 
 	public async run(client: Reso, ctx: Context): Promise<any> {
@@ -88,12 +80,8 @@ export default class Lyrics extends Command {
 		)
 
 		try {
-			const searches = await this.genius.songs.search(
-				`${trackTitle} ${artistName}`,
-			)
-			const song = searches[0]
-
-			if (!song) {
+			const lyrics = await this.fetchLyrics(artistName, trackTitle)
+			if (!lyrics) {
 				return await ctx.editMessage({
 					embeds: [
 						embed
@@ -102,11 +90,8 @@ export default class Lyrics extends Command {
 					],
 				})
 			}
-
-			const lyrics = await song.lyrics()
-			const cleanedLyrics = this.cleanLyrics(lyrics)
-			if (cleanedLyrics) {
-				const lyricsPages = this.paginateLyrics(cleanedLyrics)
+			if (lyrics) {
+				const lyricsPages = this.paginateLyrics(lyrics)
 				let currentPage = 0
 
 				const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
