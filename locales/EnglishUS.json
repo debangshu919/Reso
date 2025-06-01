@@ -530,7 +530,8 @@
     "loop": "Loop",
     "errors": {
       "not_author": "You can't use this button."
-    }
+    },
+    "commands": "Commands"
   },
   "player": {
     "errors": {
