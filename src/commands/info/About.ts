@@ -1,4 +1,5 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js"
+import { version } from "../../../package.json"
 import { Command, type Context, type Reso } from "../../classes/index"
 import { getFormattedUptime } from "../../utils/functions/UptimeTracker"
 
@@ -96,8 +97,7 @@ export default class About extends Command {
 				},
 				{
 					name: ctx.locale("cmd.about.fields.version"),
-					// biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
-					value: `v1.0.0`,
+					value: `v${version}`,
 					inline: true,
 				},
 				{
