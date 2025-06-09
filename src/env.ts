@@ -80,6 +80,8 @@ const envSchema = z.object({
 		(val) => (typeof val === "string" ? JSON.parse(val) : val),
 		z.array(LavalinkNodeSchema),
 	),
+	SPOTIFY_CLIENT_ID: z.string(),
+	SPOTIFY_CLIENT_SECRET: z.string(),
 })
 
 type Env = z.infer<typeof envSchema>

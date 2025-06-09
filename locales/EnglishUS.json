@@ -515,6 +515,18 @@
         "playlist_stolen": "Successfully stole the playlist `{playlist}` from {user}.",
         "error_occurred": "An error occurred while stealing the playlist."
       }
+    },
+    "spotify-playlist-load": {
+      "description": "Loads a spotify playlist",
+      "options": {
+        "playlist": "The link of the spotify playlist you want to load"
+      },
+      "loading": "Adding tracks to queue... (note: this may take a while)",
+      "messages": {
+        "playlist_not_exist": "That playlist doesn't exist",
+        "playlist_empty": "That playlist is empty.",
+        "playlist_loaded": "Loaded `{name}` with `{count}` songs."
+      }
     }
   },
   "buttons": {
