@@ -33,11 +33,13 @@ export default class Spotify {
 				author: playlist.owner.display_name,
 				totalSongs: playlist.tracks.total,
 			},
-			songs: playlistItems.items.map((item) => ({
-				name: item.track.name,
-				artist: item.track.artists.map((artist) => artist.name),
-				duration: item.track.duration_ms / 1000,
-			})),
+			songs: playlistItems.items
+				.filter((item) => item.track !== null)
+				.map((item) => ({
+					name: item.track.name,
+					artist: item.track.artists.map((artist) => artist.name),
+					duration: item.track.duration_ms / 1000,
+				})),
 		}
 	}
 }
