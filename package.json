@@ -1,6 +1,6 @@
 {
   "name": "reso",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Reso is a Discord music bot, written in JavaScript using the Discord.js, Typescript, lavalink-client (Lavalink) library.",
   "keywords": [
     "music",
