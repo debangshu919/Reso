@@ -14,7 +14,7 @@ COPY prisma prisma
 COPY tsconfig.json ./
     
 RUN npm run prisma
-RUN npm run deploy
+RUN npm run build
 
 # Stage 2
 
