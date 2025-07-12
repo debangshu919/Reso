@@ -4,6 +4,7 @@ import {
 	ButtonBuilder,
 	ButtonStyle,
 	ChannelType,
+	type ChatInputCommandInteraction,
 	Collection,
 	CommandInteraction,
 	EmbedBuilder,
@@ -24,7 +25,7 @@ export default class InteractionCreate extends Event {
 	}
 
 	public async run(
-		interaction: CommandInteraction | AutocompleteInteraction,
+		interaction: ChatInputCommandInteraction | AutocompleteInteraction,
 	): Promise<any> {
 		if (!(interaction.guild && interaction.guildId)) return
 		if (interaction instanceof CommandInteraction && interaction.isCommand()) {

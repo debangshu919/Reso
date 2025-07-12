@@ -20,8 +20,8 @@ import { T } from "../utils/i18n"
 import type { Reso } from "./index"
 
 export default class Context {
-	public ctx: CommandInteraction | Message
-	public interaction: CommandInteraction | null
+	public ctx: ChatInputCommandInteraction | Message
+	public interaction: ChatInputCommandInteraction | null
 	public message: Message | null
 	public id: string
 	public channelId: string
