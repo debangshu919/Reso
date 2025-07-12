@@ -4,7 +4,7 @@ import type { BotPlugin } from "../index"
 const antiCrash: BotPlugin = {
 	name: "AntiCrash Plugin",
 	version: "1.0.0",
-	author: "Appu",
+	author: "debangshu919",
 	initialize: (client: Reso) => {
 		const handleExit = async (): Promise<void> => {
 			if (client) {

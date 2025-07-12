@@ -6,7 +6,7 @@ import type { BotPlugin } from "../index"
 const keepAlive: BotPlugin = {
 	name: "KeepAlive Plugin",
 	version: "1.0.0",
-	author: "Appu",
+	author: "debangshu919",
 	initialize: (client: Reso) => {
 		if (env.KEEP_ALIVE) {
 			const server = http.createServer((_req, res) => {
