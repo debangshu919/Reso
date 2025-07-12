@@ -1,0 +1,31 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+
+# Skip merge commits
+if [ "$COMMIT_SOURCE" = "merge" ]; then
+  exit 0
+fi
+
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Only bump and commit version based on commit message type
+if [[ $COMMIT_MSG == feat:* ]]; then
+  echo "Detected feature commit - bumping minor version..."
+  npm version minor --no-git-tag-version
+  git add package.json
+  git commit -m "chore: bump minor version" --no-verify
+elif [[ $COMMIT_MSG == fix:* ]]; then
+  echo "Detected fix commit - bumping patch version..."
+  npm version patch --no-git-tag-version
+  git add package.json
+  git commit -m "chore: bump patch version" --no-verify
+elif grep -q "BREAKING CHANGE" <<< "$COMMIT_MSG"; then
+  echo "Detected breaking change - bumping major version..."
+  npm version major --no-git-tag-version
+  git add package.json
+  git commit -m "chore: bump major version" --no-verify
+else
+  echo "No semantic prefix found - skipping version bump."
+fi
