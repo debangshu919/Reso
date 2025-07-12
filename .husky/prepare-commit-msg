@@ -15,17 +15,17 @@ if [[ $COMMIT_MSG == feat:* ]]; then
   echo "Detected feature commit - bumping minor version..."
   npm version minor --no-git-tag-version
   git add package.json
-  git commit -m "chore: bump minor version" --no-verify
+  git commit -m "chore: Bump minor version" --no-verify
 elif [[ $COMMIT_MSG == fix:* ]]; then
   echo "Detected fix commit - bumping patch version..."
   npm version patch --no-git-tag-version
   git add package.json
-  git commit -m "chore: bump patch version" --no-verify
+  git commit -m "chore: Bump patch version" --no-verify
 elif grep -q "BREAKING CHANGE" <<< "$COMMIT_MSG"; then
   echo "Detected breaking change - bumping major version..."
   npm version major --no-git-tag-version
   git add package.json
-  git commit -m "chore: bump major version" --no-verify
+  git commit -m "chore: Bump major version" --no-verify
 else
   echo "No semantic prefix found - skipping version bump."
 fi
