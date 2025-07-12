@@ -60,8 +60,6 @@ export default class About extends Command {
 		const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
 			inviteButton,
 			supportButton,
-			commandButton,
-			websiteButton,
 		)
 
 		// Get the current bot uptime
